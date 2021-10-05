@@ -1,7 +1,7 @@
 {
-  "name": "mern",
+  "name": "feastfinder",
   "version": "0.1.0",
-  "description": "Mern Demo",
+  "description": "FeastFinder",
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
