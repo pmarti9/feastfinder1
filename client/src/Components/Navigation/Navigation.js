@@ -4,7 +4,7 @@ import '../../Components/Navigation/Navigation.css'
 function Navigation() {
   return (
     <div id="navColor">
-      <nav className="navbar fixed-top navbar-expand-lg navbar-dark">
+      <nav className="navbar  navbar-expand-lg navbar-dark fixed-top">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
             FeastFinder
