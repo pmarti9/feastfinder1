@@ -18,6 +18,23 @@
   font-size: large;
 }
 
+.navbar.navbar-expand-lg{
+  position: top;
+}
+.navbar{
+  position: top fixed;
+}
+
+body {
+  background-image: url('./Images/food2.png');
+  /* background-image: url('./Images/FeastFinder-logos_transparent.png'); */
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+}
+
+
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

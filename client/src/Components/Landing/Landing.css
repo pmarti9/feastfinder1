@@ -1,0 +1,11 @@
+#logoRow {
+    margin-top: 60px;
+  }
+  #logoColumn {
+    text-align: center;
+    align-items: center;
+  }
+  #logo {
+    max-width: 50%;
+    align-items: center;
+  }
