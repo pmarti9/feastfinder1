@@ -1,6 +1,16 @@
 const express = require("express");
 const path = require("path");
-const db = require("./models");
+// const db = require("./models");
+
+const mongojs = require("mongojs")
+const mongoose = require("mongoose");
+const databaseurl = "Feast_Finder";
+const collections = ["users","recipes"];
+const db = mongojs(databaseurl, collections);
+db.on("error", error => {
+  console.log("Database Error:", error);
+});
+
 const PORT = process.env.PORT || 3001;
 const app = express();
 
@@ -13,21 +23,16 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Define API routes here
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/ffdatabase", { useNewUrlParser: true });
+
+
 
 // Send every other request to the React app
 // Define any API routes before this runs
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
-db.sequelize.sync().then(function() {
-  app.listen(PORT, () => {
-    console.log(`🌎 ==> API server now on port ${PORT}!`);
-  });
-})
 
-
-// db.sequelize.sync().then(function() {
-//   app.listen(PORT, function() {
-//     console.log("App listening on PORT " + PORT);
-//   });
-// });
+app.listen(PORT, () => {
+  console.log(`🌎 ==> API server now on port ${PORT}!`);
+});
